@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+  <h2>CS</h2>
+  <div>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </div>
+</nav>
+
+<section class="about">
+
+  <h1>About Me</h1>
+
+  <p>
+    I'm Chander Shekhar, a developer focused on building clean and functional digital products.
+    I enjoy working on web development, software engineering, game development, and AI/ML.
+  </p>
+
+  <h2>Skills</h2>
+  <ul>
+    <li>Python, Flask</li>
+    <li>HTML, CSS, JavaScript</li>
+    <li>Game Development</li>
+    <li>AI / Machine Learning</li>
+    <li>Git & GitHub</li>
+  </ul>
+
+  <h2>Submitted Messages</h2>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Message</th>
+    </tr>
+
+    {% for row in data %}
+    <tr>
+      <td>{{ row[1] }}</td>
+      <td>{{ row[2] }}</td>
+      <td>{{ row[3] }}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+
+</section>
+
+</body>
+</html>
